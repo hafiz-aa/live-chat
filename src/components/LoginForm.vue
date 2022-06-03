@@ -12,7 +12,7 @@ import { ref } from 'vue'
 export default {
   setup() {
     //refs
-    const email = ref('')
+    const email = ref('') 
     const password = ref('')
 
     const handleSubmit = () => {
