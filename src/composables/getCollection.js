@@ -11,13 +11,16 @@ const getCollection = (collection) => {
   collectionRef.onSnapshot((snap) => {
     let results = []
     snap.docs.forEach(doc => {
+      // must wait for the server to create the timestamp & send it back
+      // we don't want to edit data until it has done this
       doc.data().createdAt && results.push({ ...doc.data(), id:doc.id})
     })
     documents.value = results
     error.value = null
-  }, (err) => {
+  }, err => {
     console.log(err.message)
-    documents.value = nullerror.value = 'could not fetch data'
+    documents.value = null
+    error.value = 'could not fetch data'
   })
   return { documents, error }
 }
