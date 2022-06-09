@@ -1,9 +1,8 @@
 <template>
-<div class="container">
-  <Navbar />
-  <NewChatForm />
-</div>
-  
+  <div class="container">
+    <Navbar />
+    <NewChatForm />
+  </div>
 </template>
 
 <script>
