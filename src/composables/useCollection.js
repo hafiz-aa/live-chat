@@ -6,6 +6,7 @@ import { ref } from "vue"
 // different collections may be used at once this way
 
 const useCollection = (collection) => {
+  
   const error = ref(null)
 
   const addDoc = async (doc) => {
